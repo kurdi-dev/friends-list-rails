@@ -45,6 +45,8 @@
     <%= form.label :twitter, style: "display: block", class:"form-label" %>
     <%= form.text_field :twitter, class:"form-control" %>
   </div>
+    <%= form.number_field :user_id, id: :friend_user_id , value: current_user.id , type: :hidden %>
+
 
 
   <div class='mt-4'>

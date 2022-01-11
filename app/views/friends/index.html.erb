@@ -10,12 +10,15 @@
     <th scope="col">Facebook</th>
     <th scope="col">Instagram</th>
     <th scope="col">Twitter</th>
+    <th scope="col">User ID</th>
     <th scope="col">Action</th>
+    
 
   </tr>
   </thead>
   <tbody>
   <% @friends.each do |friend| %>
+  <% if friend.user_id == current_user.id %>
   <tr>
       <td>
     
@@ -45,11 +48,15 @@
   <td>
     <%= friend.twitter %>
   </td>
+  <td>
+    <%= friend.user_id %>
+  </td>
     <td>
     
       <%= link_to "View", friend, class:"btn btn-warning" %>
     </td>
     </tr>
+    <% end %>
   <% end %>
   </tbody>
   </table>
